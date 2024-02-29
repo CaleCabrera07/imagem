@@ -171,7 +171,9 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
     )
 
     setNewTransformation(null)
+  }
 
+  const handleCreditUpdate = () => {
     startTransition(async () => {
       await updateCredits(userId, creditFee)
     })
@@ -306,6 +308,7 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
             type="submit"
             className="submit-button capitalize"
             disabled={isSubmitting}
+            onClick={handleCreditUpdate}
           >
             {isSubmitting ? 'Submitting...' : 'Save Image'}
           </Button>
