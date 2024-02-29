@@ -62,11 +62,11 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
   } : defaultValues
 
    // 1. Define your form.
-   const form = useForm<z.infer<typeof formSchema>>({
+    const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: initialValues,
   })
- 
+
   // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
